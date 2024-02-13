@@ -2,3 +2,6 @@ ca.crt
 server_chain.crt
 server.crt
 server.key
+ca_vm.log
+client_ssl_vm.log
+server_ssl_vm.log

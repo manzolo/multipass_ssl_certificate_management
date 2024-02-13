@@ -3,12 +3,10 @@
 CMD_PATH=$(dirname $0)
 source $CMD_PATH/_utils.sh
 
-# Create client-ssl VM
-print_message "Creating client-ssl VM..."
 multipass launch --name client-ssl -m 4Gb -d 10Gb -c 2
 
 # Transfer CA certificate to client-ssl VM
-print_message "Transferring CA certificate to client-ssl VM..."
+echo "Transferring CA certificate to client-ssl VM..."
 multipass transfer ca.crt client-ssl:/home/ubuntu/ca.crt
 check_error "Transferring CA certificate to client-ssl VM"
 
@@ -41,5 +39,5 @@ sudo update-ca-certificates
 EOF
 
 # Execute SSL test on client-ssl VM
-print_message "Executing SSL test on client-ssl VM..."
+echo "Executing SSL test on client-ssl VM..."
 multipass exec client-ssl -- curl -vvv https://www.example.loc 2>&1 | grep -A 6 "Server certificate:"

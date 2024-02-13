@@ -25,5 +25,21 @@ check_error() {
 
 # Function to clean up temporary files
 cleanup_files() {
-    rm -f server_chain.crt ca.crt server.crt server.key
+    rm -f server_chain.crt ca.crt server.crt server.key client_ssl_vm.log server_ssl_vm.log ca_vm.log
+}
+
+# Function for wait spinner
+show_spinner() {
+  local pid=$1
+  local delay=0.5
+  local spinstr='|/-\'
+  echo -n " "
+  while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+    local temp=${spinstr#?}
+    printf "[%c] " "$spinstr"
+    local spinstr=$temp${spinstr%"$temp"}
+    sleep $delay
+    printf "\b\b\b\b\b\b"
+  done
+  printf "    \b\b\b\b"
 }

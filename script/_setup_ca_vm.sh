@@ -4,14 +4,12 @@
 CMD_PATH=$(dirname $0)
 source $CMD_PATH/_utils.sh
 
-# Create VM for the private CA
-print_message "Creating VM for the private CA..."
 multipass launch --name ca-vm -m 1Gb -d 5Gb -c 1
 multipass transfer openssl_ext.conf ca-vm:/home/ubuntu/openssl_ext.conf
 check_error "Creating VM for the private CA"
 
 # Install dependencies on CA VM
-print_message "Installing dependencies on CA VM..."
+echo "Installing dependencies on CA VM..."
 multipass shell ca-vm <<EOF
 # Function to handle errors
 check_error() {
@@ -49,7 +47,7 @@ check_error "Combining server certificate and CA certificate"
 EOF
 
 # Transfer certificates from CA VM
-print_message "Transferring certificates from CA VM..."
+echo "Transferring certificates from CA VM..."
 
 # Transfer CA certificate
 multipass transfer ca-vm:/home/ubuntu/ca/ca.crt .

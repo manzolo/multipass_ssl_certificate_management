@@ -3,12 +3,10 @@
 CMD_PATH=$(dirname $0)
 source $CMD_PATH/_utils.sh
 
-# Create VM for SSL testing
-print_message "Creating VM for SSL testing..."
 multipass launch --name server-ssl -m 2Gb -d 10Gb -c 1
 
 # Transfer certificates from CA VM to server-ssl VM
-print_message "Transferring certificates from CA VM to server-ssl VM..."
+echo "Transferring certificates from CA VM to server-ssl VM..."
 
 # Transfer server chain certificate
 multipass transfer server_chain.crt server-ssl:/home/ubuntu/server_chain.crt

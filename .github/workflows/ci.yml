@@ -30,3 +30,12 @@ jobs:
 
       - name: Start VM
         run: ./setup.sh
+        
+      - name: Archive logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: |
+            $CMD_PATH/ca_vm.log
+            $CMD_PATH/server_ssl_vm.log
+            $CMD_PATH/client_ssl_vm.log
