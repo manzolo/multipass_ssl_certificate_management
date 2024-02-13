@@ -25,7 +25,7 @@ check_error() {
 
 # Function to clean up temporary files
 cleanup_files() {
-    rm -f server_chain.crt ca.crt server.crt server.key client_ssl_vm.log server_ssl_vm.log ca_vm.log
+    rm -f server_chain.crt ca.crt server.crt server.key ./logs/client_ssl_vm.log ./logs/server_ssl_vm.log ./logs/ca_vm.log
 }
 
 # Function for wait spinner

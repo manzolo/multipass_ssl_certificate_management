@@ -1,7 +1,7 @@
-ca.crt
-server_chain.crt
-server.crt
-server.key
-ca_vm.log
-client_ssl_vm.log
-server_ssl_vm.log
+certificates/ca.crt
+certificates/server_chain.crt
+certificates/server.crt
+certificates/server.key
+logs/ca_vm.log
+logs/client_ssl_vm.log
+logs/server_ssl_vm.log

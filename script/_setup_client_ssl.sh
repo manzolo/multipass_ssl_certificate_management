@@ -7,7 +7,7 @@ multipass launch --name client-ssl -m 4Gb -d 10Gb -c 2
 
 # Transfer CA certificate to client-ssl VM
 echo "Transferring CA certificate to client-ssl VM..."
-multipass transfer ca.crt client-ssl:/home/ubuntu/ca.crt
+multipass transfer certificates/ca.crt client-ssl:/home/ubuntu/ca.crt
 check_error "Transferring CA certificate to client-ssl VM"
 
 # Get server-ssl IP address

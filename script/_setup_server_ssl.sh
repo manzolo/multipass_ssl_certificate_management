@@ -9,19 +9,19 @@ multipass launch --name server-ssl -m 2Gb -d 10Gb -c 1
 echo "Transferring certificates from CA VM to server-ssl VM..."
 
 # Transfer server chain certificate
-multipass transfer server_chain.crt server-ssl:/home/ubuntu/server_chain.crt
+multipass transfer certificates/server_chain.crt server-ssl:/home/ubuntu/server_chain.crt
 check_error "Transferring server chain certificate from CA VM to server-ssl VM"
 
 # Transfer CA certificate
-multipass transfer ca.crt server-ssl:/home/ubuntu/ca.crt
+multipass transfer certificates/ca.crt server-ssl:/home/ubuntu/ca.crt
 check_error "Transferring CA certificate from CA VM to server-ssl VM"
 
 # Transfer server certificate
-multipass transfer server.crt server-ssl:/home/ubuntu/server.crt
+multipass transfer certificates/server.crt server-ssl:/home/ubuntu/server.crt
 check_error "Transferring server certificate from CA VM to server-ssl VM"
 
 # Transfer server key
-multipass transfer server.key server-ssl:/home/ubuntu/server.key
+multipass transfer certificates/server.key server-ssl:/home/ubuntu/server.key
 check_error "Transferring server key from CA VM to server-ssl VM"
 
 # Configure server-ssl VM

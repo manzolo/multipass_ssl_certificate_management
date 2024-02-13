@@ -50,18 +50,18 @@ EOF
 echo "Transferring certificates from CA VM..."
 
 # Transfer CA certificate
-multipass transfer ca-vm:/home/ubuntu/ca/ca.crt .
+multipass transfer ca-vm:/home/ubuntu/ca/ca.crt ./certificates/
 check_error "Transferring CA certificate from CA VM"
 
 # Transfer server certificate
-multipass transfer ca-vm:/home/ubuntu/server_chain.crt .
+multipass transfer ca-vm:/home/ubuntu/server_chain.crt ./certificates/
 check_error "Transferring server chain certificate from CA VM"
 
 # Transfer server certificate
-multipass transfer ca-vm:/home/ubuntu/server/server.crt .
+multipass transfer ca-vm:/home/ubuntu/server/server.crt ./certificates/
 check_error "Transferring server certificate from CA VM"
 
 # Transfer server key
-multipass transfer ca-vm:/home/ubuntu/server/server.key .
+multipass transfer ca-vm:/home/ubuntu/server/server.key ./certificates/
 check_error "Transferring server key from CA VM"
 
