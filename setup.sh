@@ -21,19 +21,19 @@ check_error "Stopping and removing existing VMs"
 cleanup_files
 
 # Create VM for the private CA
-print_message "Creating VM for the private CA..."
-bash $CMD_PATH/script/_setup_ca_vm.sh > $CMD_PATH/ca_vm.log 2>&1 &
-show_spinner $!
+print_message "Creating VM for the private CA, please wait..."
+bash $CMD_PATH/script/_setup_ca_vm.sh > $CMD_PATH/ca_vm.log 2>&1
 
 # Create VM for SSL testing
-print_message "Creating VM for SSL testing..."
-bash $CMD_PATH/script/_setup_server_ssl.sh > $CMD_PATH/server_ssl_vm.log 2>&1 &
-show_spinner $!
+print_message "Creating VM for SSL testing, please wait..."
+bash $CMD_PATH/script/_setup_server_ssl.sh > $CMD_PATH/server_ssl_vm.log 2>&1
 
 # Create client-ssl VM
-print_message "Creating client-ssl VM..."
-bash $CMD_PATH/script/_setup_client_ssl.sh > $CMD_PATH/client_ssl_vm.log 2>&1 &
-show_spinner $!
+print_message "Creating client-ssl VM, please wait..."
+bash $CMD_PATH/script/_setup_client_ssl.sh > $CMD_PATH/client_ssl_vm.log 2>&1
+
+#bash $CMD_PATH/script/_setup_client_ssl.sh > $CMD_PATH/client_ssl_vm.log 2>&1 &
+#show_spinner $!
 
 print_message "Done! VMs have been created and configured for use with private CA and SSL certificates."
 
