@@ -18,8 +18,25 @@ cd multipass_ssl_certificate_management
 ```
 ./Multipass_ca.sh
 ```
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/83909e46-4407-4cf4-8845-7a04299ed5eb)
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/3602ae30-8469-4db3-a076-f554ca83779b)
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/5de4c67c-73f7-4334-ab67-7c87b666bfd7)
+
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/4f4288da-eb57-47dc-be1c-b3d5cfb88d97)
+* user: ubuntu
+* password: ubuntu
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/7f37ee80-4761-4d85-9657-ed837cc1a347)
+
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/1b55972e-7896-4542-aa18-0761fa2bfb9b)
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/8ec504fa-1d00-4ed6-a2b2-d18798716482)
+
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/ca978b55-de6e-4093-a9de-46eb64c296c1)
+
+![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/6597a261-960d-4684-9c3f-e9b497cc8321)
+
+
 ## Description
-* The script Multipass_ca.sh automates the management of SSL certificates using Multipass, a lightweight VM manager. Here's what it does:
+The script Multipass_ca.sh automates the management of SSL certificates using Multipass, a lightweight VM manager. Here's what it does:
 * Creating VM for the Private CA: Launches a VM named ca-vm with specified resources and transfers the openssl_ext.conf file to it.
 * Installing Dependencies on CA VM: Installs OpenSSL on the ca-vm and creates a private CA along with certificates.
 * Creating Private Key and Server Certificate: Generates a private key and a server certificate signed by the private CA.
