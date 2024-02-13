@@ -1,21 +1,32 @@
-name: Run Multipass_ca.sh
-
 on:
   push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
-    name: Run Multipass_ca.sh
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Set up Multipass
-      uses: appleboy/multipass-action@master
+      - name: Install project dependencies
+        shell: bash
+        run: |
+          brew install --cask multipass
+          hash -r
 
-    - name: Execute Multipass_ca.sh
-      run: bash Multipass_ca.sh
+      - name: Wait for multipass to be up
+        shell: bash
+        run: |
+          until multipass list; do
+            echo 'multipass is not running, will check again in 2 seconds'
+            sleep 2
+          done
+
+      - name: Download source
+        uses: actions/checkout@v2
+
+      - name: Start VM
+        run: ./Multipass_ca.sh
