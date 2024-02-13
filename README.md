@@ -1,7 +1,6 @@
 # Multipass SSL Certificate Management
 
 This repository contains a Bash script named Multipass_ca.sh for managing SSL certificates using Multipass virtual machines.
-Usage
 
 ## Requirements
 
