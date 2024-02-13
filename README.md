@@ -1,4 +1,5 @@
 # Multipass SSL Certificate Management
+[![.github/workflows/ci.yml](https://github.com/manzolo/multipass_ssl_certificate_management/actions/workflows/ci.yml/badge.svg)](https://github.com/manzolo/multipass_ssl_certificate_management/actions/workflows/ci.yml)
 
 This repository contains a Bash script named setup.sh for managing SSL certificates using Multipass virtual machines.
 
