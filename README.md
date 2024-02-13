@@ -1,6 +1,6 @@
 # Multipass SSL Certificate Management
 
-This repository contains a Bash script named Multipass_ca.sh for managing SSL certificates using Multipass virtual machines.
+This repository contains a Bash script named setup.sh for managing SSL certificates using Multipass virtual machines.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ cd multipass_ssl_certificate_management
 
 ## Run the script:
 ```
-./Multipass_ca.sh
+./setup.sh
 ```
 ![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/83909e46-4407-4cf4-8845-7a04299ed5eb)
 ![immagine](https://github.com/manzolo/multipass_ssl_certificate_management/assets/7722346/3602ae30-8469-4db3-a076-f554ca83779b)
@@ -35,7 +35,7 @@ cd multipass_ssl_certificate_management
 
 
 ## Description
-The script Multipass_ca.sh automates the management of SSL certificates using Multipass, a lightweight VM manager. Here's what it does:
+The script setup.sh automates the management of SSL certificates using Multipass, a lightweight VM manager. Here's what it does:
 * Creating VM for the Private CA: Launches a VM named ca-vm with specified resources and transfers the openssl_ext.conf file to it.
 * Installing Dependencies on CA VM: Installs OpenSSL on the ca-vm and creates a private CA along with certificates.
 * Creating Private Key and Server Certificate: Generates a private key and a server certificate signed by the private CA.
