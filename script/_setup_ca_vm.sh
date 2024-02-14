@@ -5,7 +5,7 @@ CMD_PATH=$(dirname $0)
 source $CMD_PATH/_utils.sh
 
 multipass launch --name ca-vm -m 1Gb -d 5Gb -c 1
-multipass transfer openssl_ext.conf ca-vm:/home/ubuntu/openssl_ext.conf
+
 check_error "Creating VM for the private CA"
 
 # Install dependencies on CA VM
@@ -30,6 +30,12 @@ openssl genrsa -out ca.key 2048
 openssl req -new -key ca.key -out ca.csr -subj "$CA_SUBJ"
 openssl x509 -req -days 365 -in ca.csr -signkey ca.key -out ca.crt
 check_error "Creating private CA and certificates"
+
+echo '[server_cert]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName=DNS:www.example.loc' > /home/ubuntu/openssl_ext.conf
 
 # Create private key and server certificate
 echo "Creating private key and server certificate..."
